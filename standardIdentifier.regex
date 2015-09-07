@@ -1,0 +1,19 @@
+(?<=\b)
+(?<NA>
+ (?<NA_PREFIX>NA |NA |National Annex )
+ (?<NA_AMD>
+  (?<NA_AMD_NO>[+ /]+[A|AMD|Amendment]+[0-9]{1,})
+  (?<NA_AMD_YEAR>:[0-9]{4})?)?
+ (?<NA_SUFFIX> ?to ?)?)?
+(?<STD>
+ (?<STD_PREFIX>
+  (?<STD_PREFIX_TEXT>BS|PD|EN|ISO|IEC|prEN|[0-9]?[A|B|C|L|M|S|TA|HR|T|SP]|DD|CECC|ENV|ETS|DIN|IEEE|UNI|SS|CLC|CP|NEN|API|BCSA|CWA|CIE|PAS|CIRIA [A-Z]|UIC|VDI|ASTM [A-Z]|CEN|CR|AU|MA|QC|TR[ 0-9]?|TS|DIS)+
+  (?<STD_PREFIX_DELIMITER>[ |/|-]+))+
+ (?<STD_NO>[0-9]{1,6})
+ (?<STD_PART>[\.|-][A-Z]{0,1}[0-9]+|[ |:]{1,2}Part [.0-9]+[A-Z]{0,1})?
+ (?<STD_SECTION>[\.|-][.0-9]+|[ |:]{1,2}Section [.0-9]*)*
+ (?<DONT_KNOW>-?[A-Z]+)*
+ (?<STD_YEAR> ?: ?[0-9]{4})?)
+(?<AMD>
+ (?<AMD_NO>[+ /]+[A|AMD|Amendment]+[0-9]{1,})
+ (?<AMD_YEAR>:[0-9]{4})?)?
